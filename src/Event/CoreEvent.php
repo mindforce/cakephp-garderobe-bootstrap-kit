@@ -16,6 +16,7 @@ use Cake\Event\EventListenerInterface;
 use Garderobe\BootstrapKit\View\Widget\SwitcherWidget;
 use Garderobe\BootstrapKit\View\Widget\Select2BoxWidget;
 use Garderobe\BootstrapKit\View\Widget\SlugitWidget;
+use Garderobe\BootstrapKit\View\Widget\FileUploadWidget;
 
 class CoreEvent implements EventListenerInterface {
 
@@ -56,6 +57,12 @@ class CoreEvent implements EventListenerInterface {
           $view
         );
         $view->Form->addWidget('slugit',$slugit);
+
+        $slugit = new FileUploadWidget(
+          $view->Form->templater(),
+          $view
+        );
+        $view->Form->addWidget('fileupload',$slugit);
 
         //TODO: Editable loader section
     }
