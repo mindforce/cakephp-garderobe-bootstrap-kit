@@ -11,6 +11,12 @@
 */
 
 use Cake\Event\EventManager;
+use Cake\Core\Plugin;
+
+Plugin::loadAll([
+    ['ignoreMissing' => true, 'bootstrap' => true],
+    'Garderobe/Bootstrap3',
+]);
 
 EventManager::instance()->attach(
 	new Garderobe\BootstrapKit\Event\CoreEvent,
