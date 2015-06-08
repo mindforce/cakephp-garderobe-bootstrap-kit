@@ -23,7 +23,6 @@ class FileUploadWidget extends FileWidget{
         $this->_View->Html->script('Garderobe/BootstrapKit.fileuploadplus/jquery.fileupload.js', ['block' => true]);
         $this->_View->Html->script('Garderobe/BootstrapKit.fileuploadplus/jquery.fileupload-process.js', ['block' => true]);
         $this->_View->Html->script('Garderobe/BootstrapKit.fileuploadplus/jquery.fileupload-validate.js', ['block' => true]);
-        $this->_View->Html->script('init.js', ['block' => true]);
         //$this->_View->Html->scriptBlock($js, ['block' => true]);
         if (!isset($data['class'])){
             $data['class'] = 'file-upload';
