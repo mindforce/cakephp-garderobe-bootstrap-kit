@@ -3,6 +3,7 @@ namespace Garderobe\BootstrapKit\View\Widget;
 
 use Cake\View\Form\ContextInterface;
 use Cake\View\Widget\SelectBoxWidget;
+use Cake\Utility\Hash;
 use Traversable;
 
 class Select2BoxWidget extends SelectBoxWidget
@@ -23,12 +24,16 @@ class Select2BoxWidget extends SelectBoxWidget
 
     public function render(array $data, ContextInterface $context)
     {
-        $this->_View->Html->css('Garderobe/BootstrapKit.select2/select2.min.css', ['block' => true]);
-        $this->_View->Html->css('Garderobe/BootstrapKit.select2/select2-bootstrap.css', ['block' => true]);
+        $this->_View->Html->css(
+            ['Garderobe/BootstrapKit.select2/select2.min.css', 'Garderobe/BootstrapKit.select2/select2-bootstrap.css'],
+            ['block' => true]
+        );
         $this->_View->Html->script('Garderobe/BootstrapKit.select2/select2.min.js', ['block' => true]);
+
+        $selector = (Hash::get($data, 'id') ? '#'.Hash::get($data, 'id') : '.select2-input');
         $js = "
         $(function(){
-            $('.select2-input').select2({
+            $('".$selector."').select2({
                 theme: 'bootstrap'
             });
         });
