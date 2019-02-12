@@ -31,7 +31,7 @@ class CoreEvent implements EventListenerInterface {
 
     public function addWidgets(Event $event, $viewFile)
     {
-        $view = $event->subject();
+        $view = $event->getSubject();
         $widgetRegistry = $view->Form->widgetRegistry();
 
         //TODO: possible implement to load widget at once

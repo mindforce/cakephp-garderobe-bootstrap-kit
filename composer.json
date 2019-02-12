@@ -4,8 +4,8 @@
     "type": "cakephp-plugin",
     "require": {
         "php": ">=5.6",
-        "cakephp/plugin-installer": "*",
-        "cakephp/cakephp": "~3.2",
+        "cakephp/cakephp": "3.7.*",
+        "cakephp/migrations": "^2.0.0",
         "mindforce/cakephp-garderobe-bootstrap3": "*"
     },
     "require-dev": {

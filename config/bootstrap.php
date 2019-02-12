@@ -10,16 +10,4 @@
 * @license       http://www.opensource.org/licenses/mit-license.php MIT License
 */
 
-use Cake\Event\EventManager;
-use Cake\Core\Plugin;
 
-Plugin::loadAll([
-    ['ignoreMissing' => true, 'bootstrap' => true, 'routes' => true],
-    'Garderobe/Bootstrap3',
-]);
-
-EventManager::instance()->attach(
-	new Garderobe\BootstrapKit\Event\CoreEvent,
-    null,
-	['priority' => 10]
-);
